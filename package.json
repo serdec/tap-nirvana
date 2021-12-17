@@ -1,5 +1,5 @@
 {
-  "name": "tap-nirvana",
+  "name": "tap-nirvana-extended",
   "version": "1.1.0",
   "description": "Proper Diffing Reporter for TAP",
   "main": "tap-nirvana.js",
@@ -30,17 +30,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inadarei/tap-nirvana.git"
+    "url": "git+https://github.com/serdec/tap-nirvana-extended.git"
   },
   "keywords": [
     "tap",
     "diff",
     "reporter"
   ],
-  "author": "Irakli Nadareishvili",
+  "author": "Sergio de Cristofaro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/inadarei/tap-nirvana/issues"
+    "url": "https://github.com/serdec/tap-nirvana-extended/issues"
   },
-  "homepage": "https://github.com/inadarei/tap-nirvana"
+  "homepage": "https://github.com/serdec/tap-nirvana-extended"
 }
