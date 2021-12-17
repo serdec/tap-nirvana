@@ -1,7 +1,5 @@
 # Tap Nirvana - Proper Reporter
 
-This is a fork from [inadarei/tap-nirvana](https://github.com/inadarei/tap-nirvana)
-
 A TAP reporter optimized for developer comfort above anything else. Works with
 any TAP-compatible test runner, such as
 [tape](https://www.npmjs.com/package/tape) or
@@ -41,3 +39,4 @@ Snippet from a package.json:
 ### Credit
 
 TAP Nirvana is a fork of [Tap-Spec](https://github.com/scottcorgan/tap-spec)
+TAP Nirvana Extended is a fork of [tap-nirvana](https://github.com/inadarei/tap-nirvana)
