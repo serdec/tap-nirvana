@@ -11,24 +11,6 @@ const symbols = require("figures");
 const stringify = require("json-stringify-pretty-compact");
 const vdiff = require("variable-diff");
 
-function lTrimList(lines) {
-  var leftPadding;
-
-  // Get minimum padding count
-  _.each(lines, function (line) {
-    var spaceLen = line.match(/^\s+/)[0].length;
-
-    if (leftPadding === undefined || spaceLen < leftPadding) {
-      leftPadding = spaceLen;
-    }
-  });
-
-  // Strip padding at beginning of line
-  return _.map(lines, function (line) {
-    return line.slice(leftPadding);
-  });
-}
-
 /**
  * If you try to deepEqual two JSON objects in tape, by the time these reach us
  * here, they are stringified Javascript (not JSON!) objects. So we need to
@@ -217,7 +199,18 @@ module.exports = function (spec) {
       return assertion.test;
     });
 
+    const groupedComments = _.groupBy(
+      results.comments,
+      comment => comment.test
+    );
+
     _.each(groupedAssertions, function (assertions, testNumber) {
+      const comments = groupedComments[testNumber];
+      _.each(
+        comments,
+        comment => (out += "\n" + pad("  " + format.yellow(comment.raw)))
+      );
+
       // Wrie failed assertion's test name
       var test = _.find(results.tests, { number: parseInt(testNumber) });
       out += "\n" + pad(format.cyan(test.name) + "\n");
